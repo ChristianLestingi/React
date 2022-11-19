@@ -1,6 +1,11 @@
+//Write a Hello class components that renders the "Hello, World!" message within an h1 tag.
 
-// Write a function that receives two parameters, a and b and returns the sum of them within an h2 tag.
+import React from "react";
 
-const sum= (a,b)=>{
-    return <h2> {a + b}</h2>
+export class Hello extends React.Component{
+    render(){
+        return <h1>Hello, World</h1>
+
+
+    }
 }
