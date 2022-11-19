@@ -1,8 +1,3 @@
 
-//Write a function that receives a name argument and returns a h1 tag with the name variable appended to the "Hello, " string.
-
- const name = (name)=> {
-   return <h1> Hello {name}</h1>
- }
-
+// Write a function that receives two parameters, a and b and returns the sum of them within an h2 tag.
 
