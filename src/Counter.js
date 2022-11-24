@@ -13,6 +13,7 @@ export class Counter extends React.Component {
       });
     }, this.props.incrementTime);
   }
+  
 
   render() {
     return (
