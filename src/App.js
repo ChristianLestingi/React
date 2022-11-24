@@ -12,6 +12,7 @@ export class App extends React.Component {
         <Counter initialValue={10}
                  incrementValue={1}
                  incrementTime={3000} />
+                 
       </div>
     );
   }
