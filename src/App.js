@@ -1,8 +1,6 @@
-// Write a class component called App that renders the Hello component within a div tag.
-
-import React from "react"
+import React from "react";
 import { Counter } from "./Counter";
-import { Hello } from "./Hello"
+import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -10,8 +8,10 @@ export class App extends React.Component {
     return (
       <div>
         <Hello />
-        <Welcome  name= 'John' />
-        <Counter />
+        <Welcome name="John" />
+        <Counter initialValue={10}
+                 incrementValue={1}
+                 incrementTime={3000} />
       </div>
     );
   }
