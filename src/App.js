@@ -11,7 +11,7 @@ export class App extends React.Component {
       <div>
         <Hello />
         <Welcome  name= 'John' />
-        <Counter/>
+        <Counter />
       </div>
     );
   }
