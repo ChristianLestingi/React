@@ -2,12 +2,14 @@
 
 import React from "react"
 import { Hello } from "./Hello"
+import { Jokes } from "./Jokes";
 
 export class App extends React.Component {
   render() {
     return (
       <div>
         <Hello />
+        <Jokes jokes='Prova'/>
       </div>
     );
   }
