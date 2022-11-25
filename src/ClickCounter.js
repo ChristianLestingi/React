@@ -1,9 +1,9 @@
 import React from "react";
 
 
-export class Clickcounter extends React.Component{
+export class ClickCounter extends React.Component{
 state ={
-    count : 0
+    count : this.props.initialValue
 }
 
 
@@ -12,6 +12,12 @@ state ={
 }
 
 }
+
+ClickCounter.de{
+    this.pr
+}
+
+
 
 
 
