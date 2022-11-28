@@ -5,6 +5,7 @@ export class Login extends React.Component {
     username: "",
     password: "",
     remember: false,
+
   };
 
   controlValueInput = (event) => {
@@ -20,6 +21,15 @@ export class Login extends React.Component {
 
   componentDidUpdate() {
     console.log(this.state);
+  }
+
+  resetForm = () =>{
+    this.setState({
+        username : '',
+        password: '',
+        remember : false
+    })
+
   }
 
   render() {
@@ -42,6 +52,9 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.controlValueInput}
         ></input>
+        <button onClick={this.resetForm}>
+            Login
+        </button>
       </div>
     );
   }
