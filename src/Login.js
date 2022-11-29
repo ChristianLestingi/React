@@ -5,7 +5,7 @@ export class Login extends React.Component {
     username: "",
     password: "",
     remember: false,
-
+    buttonState: true,
   };
 
   controlValueInput = (event) => {
@@ -13,23 +13,23 @@ export class Login extends React.Component {
     const value = event.target.value;
     const type = event.target.type;
     const checked = event.target.checked;
+    
 
     this.setState({
       [name]: type === "checkbox" ? checked : value,
     });
   };
 
+  onLogin = (event) => {
+    {
+      this.setState({ buttonState: false });
+    }
+    console.log(buttonState)
+  };
+
+
   componentDidUpdate() {
     console.log(this.state);
-  }
-
-  resetForm = () =>{
-    this.setState({
-        username : '',
-        password: '',
-        remember : false
-    })
-
   }
 
   render() {
@@ -52,10 +52,28 @@ export class Login extends React.Component {
           checked={this.state.remember}
           onChange={this.controlValueInput}
         ></input>
-        <button onClick={this.resetForm}>
-            Login
+        <button
+          name="buttonState"
+          type="submit"
+          disabled={this.state.buttonState}
+          onChange={this.onLogin}
+        >
+          Login
         </button>
       </div>
     );
   }
 }
+// resetForm = () =>{
+//   this.setState({
+//       username : '',
+//       password: '',
+//       remember : false
+//   })
+
+// }
+//  formIncompleted=(event)=>{
+//   this.setState({
+
+//   })
+//  }
