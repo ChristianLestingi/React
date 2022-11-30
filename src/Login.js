@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 
 export class Login extends React.Component {
@@ -13,20 +14,22 @@ export class Login extends React.Component {
     const value = event.target.value;
     const type = event.target.type;
     const checked = event.target.checked;
-    
+    // const disabled=event.target.disabled;
 
     this.setState({
       [name]: type === "checkbox" ? checked : value,
+      // [name]: type === 'button'? disabled : value,
+      disabled: value === "" ? true : false,
     });
   };
 
   onLogin = (event) => {
-    {
-      this.setState({ buttonState: false });
-    }
-    console.log(buttonState)
+    this.setState({
+      username: this.state.username,
+      password: this.state.password,
+      remember: this.state.remember,
+    });
   };
-
 
   componentDidUpdate() {
     console.log(this.state);
@@ -53,10 +56,11 @@ export class Login extends React.Component {
           onChange={this.controlValueInput}
         ></input>
         <button
-          name="buttonState"
-          type="submit"
+          name="button"
+          type="button"
           disabled={this.state.buttonState}
-          onChange={this.onLogin}
+          onChange={this.controlValueInput}
+          onClick={this.onLogin}
         >
           Login
         </button>
