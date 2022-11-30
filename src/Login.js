@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export class Login extends React.Component {
@@ -14,13 +13,14 @@ export class Login extends React.Component {
     const value = event.target.value;
     const type = event.target.type;
     const checked = event.target.checked;
-    const disabled=event.target.disabled;
+    const disabled = event.target.disabled;
 
     this.setState({
       [name]: type === "checkbox" ? checked : value,
-      [name]:type === 'button'? disabled : value,
+      [name]: type === "button" ? disabled : value,
+      buttonState: this.state.username && this.state.password  === '' ? true : false
 
-      buttonState : value === "" ? true : false,
+
     });
   };
 
@@ -29,7 +29,6 @@ export class Login extends React.Component {
       username: this.state.username,
       password: this.state.password,
       remember: this.state.remember,
-
     });
   };
 
@@ -70,16 +69,3 @@ export class Login extends React.Component {
     );
   }
 }
-// resetForm = () =>{
-//   this.setState({
-//       username : '',
-//       password: '',
-//       remember : false
-//   })
-
-// }
-//  formIncompleted=(event)=>{
-//   this.setState({
-
-//   })
-//  }
