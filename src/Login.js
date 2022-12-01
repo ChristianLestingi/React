@@ -34,6 +34,13 @@ export class Login extends React.Component {
       remember: this.state.remember,
     });
   };
+  resetForm = (event) => {
+    this.setState({
+      username: "",
+      password: "",
+      remember: false,
+    });
+  };
 
   componentDidUpdate() {
     console.log(this.state);
@@ -69,6 +76,7 @@ export class Login extends React.Component {
         >
           Login
         </button>
+        <button name="reset" onClick={this.resetForm}> Reset Form</button>
       </form>
     );
   }
