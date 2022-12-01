@@ -18,9 +18,12 @@ export class Login extends React.Component {
     this.setState({
       [name]: type === "checkbox" ? checked : value,
       [name]: type === "button" ? disabled : value,
-      buttonState: this.state.username && this.state.password  === '' ? true : false
-
-
+      buttonState:
+        this.state.password === ""
+          ? true
+          : false || this.state.username === ""
+          ? true
+          : false,
     });
   };
 
@@ -38,9 +41,10 @@ export class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <form>
         <input
           name="username"
+          type="username"
           value={this.state.username}
           onChange={this.controlValueInput}
         ></input>
@@ -65,7 +69,7 @@ export class Login extends React.Component {
         >
           Login
         </button>
-      </div>
+      </form>
     );
   }
 }
