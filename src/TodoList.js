@@ -1,25 +1,40 @@
 import React from "react";
-state = {
-  value: "",
-};
-addItemArray = (event) => {
-  const value = event.target.value;
-  this.setState({
-    value: value,
-  });
-
-  console.log(value);
-};
 
 export class TodoList extends React.Component {
+  state = {
+    value: "",
+    items: ["milk", "bread", "pasta"],
+  };
+  takeValue = (event) => {
+    const value = event.target.value;
+    this.setState({
+      value: value,
+    });
+    console.log(value);
+  };
+  addItemArray = (event) => {
+    this.state.items.push(this.state.value);
+
+    this.setState({
+      value: this.state.value,
+    });
+  };
+
   render() {
-    const items = this.props.items.map((item) => <li>{item}</li>);
     return (
       <div>
-        <ul>{items} </ul>
-        <input name="input" type="text"{this.state.value}onChange={this.addItemArray}></input>
-        <button onClick={this.addItemArray} name="button" type="button">
-          {" "}
+        <ul>
+          {this.state.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <input
+          name="input"
+          type="text"
+          value={this.state.value}
+          onChange={this.takeValue}
+        ></input>
+        <button name="button" type="button" onClick={this.addItemArray}>
           Add
         </button>
       </div>

@@ -24,7 +24,7 @@ export class App extends React.Component {
          <InteractiveWelcome/>
          <Login/>
          <UncontrolledLogin/>
-         <TodoList  items={[ 'milk', 'bread','pasta']}/>
+         <TodoList  />
 
 
       </div>
