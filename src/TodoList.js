@@ -19,12 +19,11 @@ export class TodoList extends React.Component {
       value: this.state.value,
     });
   };
-  resetItemArray=(event)=>{
-    this.state.items.pop(this.state.items)
-   this.setState({
-    value: this.state.value
-   })
-  }
+  resetItemsArray = (event) => {
+    this.setState({
+      items: [],
+    });
+  };
 
   render() {
     return (
@@ -43,7 +42,9 @@ export class TodoList extends React.Component {
         <button name="button" type="button" onClick={this.addItemArray}>
           Add
         </button>
-        <button name="reset" type="button" onClick={this.resetItemArray}>reset</button>
+        <button name="reset" type="button" onClick={this.resetItemsArray}>
+          reset
+        </button>
       </div>
     );
   }
