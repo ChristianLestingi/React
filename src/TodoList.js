@@ -24,28 +24,20 @@ export class TodoList extends React.Component {
       items: [],
     });
   };
-  resetItemArray = (event) => {
+  resetItemArray = (index) => {
     this.setState({
-      items: this.state.items.pop()
-    })
-
-
-
-
-
-
-
-
+      items: this.state.items.filter((item, i) => i !== index),
+    });
   };
 
   render() {
     return (
       <div>
         <ul>
-          {this.state.items.map((item) => (
-            <li>
+          {this.state.items.map((item, i) => (
+            <li key={i}>
               {item}
-              <button onClick={this.resetItemArray}> Remove </button>
+              <button onClick={() => this.resetItemArray(i)}> Remove </button>
             </li>
           ))}
         </ul>
