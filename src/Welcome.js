@@ -5,9 +5,9 @@ import { Age } from "./Age";
 export class Welcome extends React.Component {
   render() {
     return (
-      <div>
+      <div className="welcome">
         <p>Hello , {this.props.name} !!</p>
-       { this.props.name==='John' &&<Age age={19} />}
+        {this.props.name === "John" && <Age age={19} />}
       </div>
     );
   }
