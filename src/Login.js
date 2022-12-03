@@ -47,6 +47,11 @@ export class Login extends React.Component {
   }
 
   render() {
+    const ButtonStyle = {
+      color: "black",
+      backgroundColor: this.state.password.length < 8 ? "red" : "green",
+    };
+
     return (
       <form>
         <input
@@ -73,10 +78,14 @@ export class Login extends React.Component {
           disabled={this.state.buttonState}
           onChange={this.controlValueInput}
           onClick={this.onLogin}
+          style={ButtonStyle}
         >
           Login
         </button>
-        <button name="reset" onClick={this.resetForm}> Reset Form</button>
+        <button name="reset" onClick={this.resetForm}>
+          {" "}
+          Reset Form
+        </button>
       </form>
     );
   }
