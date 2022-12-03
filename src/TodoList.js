@@ -24,15 +24,32 @@ export class TodoList extends React.Component {
       items: [],
     });
   };
+  resetItemArray = (event) => {
+    this.setState({
+      items: this.state.items.pop()
+    })
+
+
+
+
+
+
+
+
+  };
 
   render() {
     return (
       <div>
         <ul>
           {this.state.items.map((item) => (
-            <li>{item}</li>
+            <li>
+              {item}
+              <button onClick={this.resetItemArray}> Remove </button>
+            </li>
           ))}
         </ul>
+
         <input
           name="input"
           type="text"
