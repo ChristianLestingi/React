@@ -14,7 +14,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container title=" My application">
           <Hello />
 
           <Welcome name="John" />

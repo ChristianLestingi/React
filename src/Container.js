@@ -7,6 +7,13 @@ export class Container extends React.Component {
       border: "3px solid red",
     };
 
-    return <div style={Style}>{this.props.children}</div>;
+    return (
+      <div>
+        <div style={Style} className="Container-title">
+          {this.props.title}
+          <div>{this.props.children}</div>;
+        </div>
+      </div>
+    );
   }
 }
