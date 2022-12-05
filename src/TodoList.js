@@ -33,15 +33,7 @@ export class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.items.map((item, i) => (
-            <li key={i}>
-              {item}
-              <button onClick={() => this.resetItemArray(i)}> Remove </button>
-            </li>
-          ))}
-        </ul>
-
+        {this.props.render({ ...this.state, reset: this.resetItemArray })}
         <input
           name="input"
           type="text"
