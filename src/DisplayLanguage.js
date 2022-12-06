@@ -1,6 +1,6 @@
 import React from "react";
-
-
+import { createContext } from "react";
+export const LanguageContext = createContext("en");
 
 export class DisplayLanguage extends React.Component {
   state = {
@@ -16,7 +16,13 @@ export class DisplayLanguage extends React.Component {
   render() {
     return (
       <div>
-     
+        <select
+          value={this.state.language}
+          onChange={this.hundleChangeLanguage}
+        >
+          <option value="en">EN</option>
+          <option value="it">IT</option>
+        </select>
       </div>
     );
   }
