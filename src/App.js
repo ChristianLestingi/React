@@ -10,6 +10,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { LanguageContext } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component {
   state = {
@@ -26,6 +27,7 @@ export class App extends React.Component {
         <Container title=" My application">
           <LanguageContext.Provider value={this.state.language}>
             <Hello  />
+            <Sum numbers={[1,2,3,4,5]}/>
 
             <Welcome name="John" />
             <Counter
