@@ -26,7 +26,7 @@ export class Login extends React.Component {
           ? true
           : false,
     });
-  };
+  }; 
 
   onLogin = (event) => {
     this.setState({
