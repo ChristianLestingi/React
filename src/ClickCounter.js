@@ -16,6 +16,7 @@ export class ClickCounter extends React.Component {
     return (
       <div>
         <h1> {this.state.count}</h1>
+        
         <button onClick={this.incrementOnClick}>Add</button>
       </div>
     );

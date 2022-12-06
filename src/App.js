@@ -9,6 +9,9 @@ import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
+import { DisplayLanguage, LanguageContext } from "./DisplayLanguage";
+
+export const LanguageContext = createContext("en");
 
 export class App extends React.Component {
   render() {
@@ -16,14 +19,21 @@ export class App extends React.Component {
       <div>
         <Container title=" My application">
           <Hello />
+          
 
           <Welcome name="John" />
           <Counter initialValue={10} incrementValue={1} incrementTime={3000} />
-          <ClickCounter />
-          <ClickTraker />
-          <InteractiveWelcome />
-          <Login />
-          <UncontrolledLogin />
+          <DisplayLanguage/>
+
+          <LanguageContext.Provider value={this.state.language}>
+            <ClickCounter />
+            <ClickTraker />
+            <InteractiveWelcome />
+
+            <Login />
+            <UncontrolledLogin />
+          </LanguageContext.Provider>
+
           <TodoList
             render={({ items, reset }) => {
               return (
@@ -31,7 +41,7 @@ export class App extends React.Component {
                   {items.map((item, i) => (
                     <li key={i}>
                       {item}
-                      <button onClick={()=>reset(i)}>Remove</button>
+                      <button onClick={() => reset(i)}>Remove</button>
                     </li>
                   ))}
                 </ul>
