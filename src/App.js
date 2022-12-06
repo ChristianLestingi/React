@@ -25,7 +25,7 @@ export class App extends React.Component {
       <div>
         <Container title=" My application">
           <LanguageContext.Provider value={this.state.language}>
-            <Hello />
+            <Hello  />
 
             <Welcome name="John" />
             <Counter
