@@ -33,7 +33,7 @@ export class App extends React.Component {
               incrementValue={1}
               incrementTime={3000}
             />
-            <select value={this.state.language}>
+            <select value={this.state.language}onChange={this.handleSelectLanguage}>
               <option value="en">ENGLISH</option>
               <option value="it">ITALIAN</option>
             </select>
