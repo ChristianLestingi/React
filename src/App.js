@@ -9,14 +9,22 @@ import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
-import { DisplayLanguage, LanguageContext } from "./DisplayLanguage";
+import { LanguageContext } from "./DisplayLanguage";
 
 export class App extends React.Component {
+  state = {
+    language: "english",
+  };
+  handleSelectLanguage = (event) => {
+    this.setState({
+      language: event.target.value,
+    });
+  };
   render() {
     return (
       <div>
-        <LanguageContext.Provider>
-          <Container title=" My application">
+        <Container title=" My application">
+          <LanguageContext.Provider value={this.state.language}>
             <Hello />
 
             <Welcome name="John" />
@@ -25,7 +33,10 @@ export class App extends React.Component {
               incrementValue={1}
               incrementTime={3000}
             />
-            <DisplayLanguage />
+            <select value={this.state.language}>
+              <option value="en">ENGLISH</option>
+              <option value="it">ITALIAN</option>
+            </select>
 
             <ClickCounter />
             <ClickTraker />
@@ -48,8 +59,8 @@ export class App extends React.Component {
                 );
               }}
             ></TodoList>
-          </Container>
-        </LanguageContext.Provider>
+          </LanguageContext.Provider>
+        </Container>
       </div>
     );
   }

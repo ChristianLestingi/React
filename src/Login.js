@@ -1,4 +1,5 @@
 import React from "react";
+import { LanguageContext } from "./DisplayLanguage";
 
 export class Login extends React.Component {
   state = {
