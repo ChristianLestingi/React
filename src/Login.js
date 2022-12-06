@@ -87,6 +87,14 @@ export class Login extends React.Component {
           {" "}
           Reset Form
         </button>
+        <LanguageContext.Consumer>
+          {language=>{
+            return <h1> {language}</h1>
+          }
+
+          }
+
+        </LanguageContext.Consumer>
       </form>
     );
   }
