@@ -27,7 +27,7 @@ export class App extends React.Component {
         <Container title=" My application">
           <LanguageContext.Provider value={this.state.language}>
             <Hello  />
-            <Sum numbers={[1,2,3,4,5]}/>
+            <Sum/>
 
             <Welcome name="John" />
             <Counter
