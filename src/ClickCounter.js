@@ -1,7 +1,18 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 export function ClickCounter(initialValue) {
   const [current, setCurrent]= useState(initialValue = 10)
+
+  useEffect(() => {
+    return onCounterChange
+  },
+  [current]);
+
+   function onCounterChange(){
+    console.log(current)
+
+  }
 
 
 
