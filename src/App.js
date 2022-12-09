@@ -11,6 +11,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { LanguageContext } from "./DisplayLanguage";
 import { Sum } from "./Sum";
+import { CounterDisplay } from "./CounterDisplay";
 
 export class App extends React.Component {
   state = {
@@ -30,11 +31,10 @@ export class App extends React.Component {
             <Sum/>
 
             <Welcome name="John" />
-            <Counter
-              initialValue={10}
-              incrementValue={1}
-              incrementTime={3000}
-            />
+            <Counter/>
+            <CounterDisplay />
+
+
             <select value={this.state.language}onChange={this.handleSelectLanguage}>
               <option value="en">ENGLISH</option>
               <option value="it">ITALIAN</option>
